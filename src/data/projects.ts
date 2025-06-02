@@ -6,7 +6,6 @@ export const projectData = [
     description:
       "A full-featured online store with checkout, admin panel, and CMS.",
     image: "/projects/store.png",
-    link: "#",
     tech: ["Next.js", "Stripe", "Postgres", "Typescript"],
   },
   {
@@ -15,7 +14,6 @@ export const projectData = [
     category: "Mobile",
     description: "Modern mobile UI for an on-demand delivery service.",
     image: "/projects/app.png",
-    link: "#",
     tech: ["React Native", "Figma"],
   },
   {
@@ -24,7 +22,6 @@ export const projectData = [
     category: "Branding",
     description: "Animated portfolio website for a designer.",
     image: "/projects/portfolio.png",
-    link: "#",
     tech: ["Next.js", "Framer Motion", "GSAP", "TailwindCSS"],
   },
 ];

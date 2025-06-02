@@ -4,13 +4,25 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import { projectData } from "@/data/projects";
+import Image from "next/image";
 
-const categories = ["All", "Web", "Mobile"];
+const categories = ["All", "Web", "Mobile"] as const;
 const ITEMS_PER_PAGE = 6;
 
+type Category = (typeof categories)[number];
+
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  category: Category;
+  image: string;
+  tech: string[];
+};
+
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState("All");
-  const [selected, setSelected] = useState(null);
+  const [filter, setFilter] = useState<Category>("All");
+  const [selected, setSelected] = useState<Project | null>(null);
   const [page, setPage] = useState(1);
 
   const filtered =
@@ -21,7 +33,7 @@ export default function ProjectsPage() {
   const paginated = filtered.slice(0, page * ITEMS_PER_PAGE);
   const hasMore = filtered.length > page * ITEMS_PER_PAGE;
 
-  const handleLoadMore = () => setPage(page + 1);
+  const handleLoadMore = () => setPage((prev) => prev + 1);
 
   return (
     <section className="min-h-screen px-6 md:px-12 lg:px-24 py-20 bg-background text-foreground">
@@ -73,11 +85,12 @@ export default function ProjectsPage() {
               onClick={() => setSelected(project)}
               className="cursor-pointer bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl"
             >
-              <div className="aspect-video overflow-hidden">
-                <img
+              <div className="aspect-[16/9] relative w-full">
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500 rounded-t-2xl"
                 />
               </div>
               <div className="p-6 space-y-2">
@@ -108,16 +121,19 @@ export default function ProjectsPage() {
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur flex items-center justify-center px-4">
           <div className="relative max-w-3xl w-full bg-background p-6 rounded-xl border border-border">
             <button
-              className="absolute top-3 right-3 text-muted-foreground hover:text-white"
+              className="absolute top-3 right-3 z-50 bg-black/70 text-white p-2 rounded-full hover:bg-black/90 transition"
               onClick={() => setSelected(null)}
             >
               <X className="w-5 h-5" />
             </button>
-            <img
-              src={selected.image}
-              alt={selected.title}
-              className="w-full rounded-lg mb-4"
-            />
+            <div className="relative w-full aspect-[16/9] mb-4">
+              <Image
+                src={selected.image}
+                alt={selected.title}
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <h2 className="text-2xl font-bold mb-2">{selected.title}</h2>
             <p className="text-muted-foreground mb-4">{selected.description}</p>
             <div className="flex flex-wrap gap-2 text-sm">
@@ -130,15 +146,6 @@ export default function ProjectsPage() {
                 </span>
               ))}
             </div>
-            {selected.link && (
-              <a
-                href={selected.link}
-                target="_blank"
-                className="inline-flex items-center gap-1 text-blue-500 hover:underline mt-4"
-              >
-                View Live <ArrowUpRight className="w-4 h-4" />
-              </a>
-            )}
           </div>
         </div>
       )}

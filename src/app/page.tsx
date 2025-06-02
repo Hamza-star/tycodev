@@ -1,5 +1,4 @@
 import ContactForm from "@/components/ContactForm";
-import FAQ from "@/components/FAQ";
 import HeroSection from "@/components/HeroSection";
 import Marquee from "@/components/Marquee";
 import ProjectsPage from "@/components/ProjectsPage";
@@ -19,7 +18,6 @@ const Home = () => {
       <Marquee />
       <Services />
       <ProjectsPage />
-      <FAQ />
       <ServiceCTA />
       <ContactForm />
     </main>
