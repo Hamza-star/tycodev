@@ -13,10 +13,11 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="flex flex-col items-start space-y-3">
             <Link href="/">
-              <Image src="/logo.png" alt="logo" width={120} height={32} />
+              <h1 className="text-4xl font-bold">Tycodev</h1>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Helping startups and brands grow with premium digital experiences.
+              Tyco Developers helping startups and brands grow with premium
+              digital experiences.
             </p>
             <div className="flex items-center gap-4 pt-2 text-muted-foreground">
               <a

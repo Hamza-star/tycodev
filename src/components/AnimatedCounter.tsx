@@ -7,12 +7,6 @@ import { Briefcase, Clock, Users } from "lucide-react";
 
 const stats = [
   {
-    icon: Briefcase,
-    label: "Projects Completed",
-    value: 10,
-    gradient: ["#3182ce", "#3182ce"],
-  },
-  {
     icon: Clock,
     label: "Years Experience",
     value: 1,
@@ -22,6 +16,12 @@ const stats = [
     icon: Users,
     label: "Happy Clients",
     value: 8,
+    gradient: ["#3182ce", "#3182ce"],
+  },
+  {
+    icon: Briefcase,
+    label: "Projects Completed",
+    value: 10,
     gradient: ["#3182ce", "#3182ce"],
   },
 ];

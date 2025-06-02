@@ -23,7 +23,7 @@ export default function About() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-3xl md:text-5xl font-bold px-6 text-center max-w-4xl">
-            Discover How We Can Help Your Business Thrive
+            Discover How Wes Can Help Your Business Thrive
           </h1>
         </div>
       </div>
@@ -38,14 +38,13 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-bold leading-tight">
-              About Our Service Business
-            </h2>
+            <h2 className="text-4xl font-bold leading-tight">About Us</h2>
 
             <p className="text-lg max-w-xl text-muted-foreground">
-              We deliver top-notch digital solutions that empower your business
-              to grow and succeed in a competitive market. Our team is committed
-              to quality, innovation, and customer satisfaction.
+              Tyco Developers deliver top-notch digital solutions that empower
+              your business to grow and succeed in a competitive market. Our
+              team is committed to quality, innovation, and customer
+              satisfaction.
             </p>
 
             <div>
