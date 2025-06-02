@@ -15,9 +15,8 @@ export default function Footer() {
             <Link href="/">
               <h1 className="text-4xl font-bold">Tycodev</h1>
             </Link>
-            <p className="text-muted-foreground text-sm max-w-xs">
-              Tyco Developers helping startups and brands grow with premium
-              digital experiences.
+            <p className="text-muted-foreground pt-3 text-sm max-w-xs">
+              Helping startups and brands grow with premium digital experiences.
             </p>
             <div className="flex items-center gap-4 pt-2 text-muted-foreground">
               <a
