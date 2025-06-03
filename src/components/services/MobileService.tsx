@@ -14,7 +14,7 @@ export default function MobileService() {
   return (
     <section className="text-foreground">
       {/* Header Image with Overlay */}
-      <div className="relative h-64 md:h-96 w-full overflow-hidden mb-12">
+      <div className="relative h-64 md:h-96 mt-20 w-full overflow-hidden mb-12">
         <Image
           src="/services/mobile-app.png"
           alt="Mobile development header"

@@ -14,7 +14,7 @@ export default function About() {
   return (
     <section className="bg-background text-foreground">
       {/* Header Image with overlay */}
-      <div className="relative h-64 md:h-96 w-full overflow-hidden">
+      <div className="relative h-64 md:h-96 w-full mt-20 overflow-hidden">
         <img
           src="/images/about.jpg"
           alt="About header"
@@ -23,7 +23,7 @@ export default function About() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-3xl md:text-5xl font-bold px-6 text-center max-w-4xl">
-            Discover How Wes Can Help Your Business Thrive
+            Discover How We Can Help Your Business Thrive
           </h1>
         </div>
       </div>
